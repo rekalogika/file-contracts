@@ -13,16 +13,16 @@ declare(strict_types=1);
 
 namespace Rekalogika\Contracts\File;
 
-use Symfony\Contracts\Translation\TranslatableInterface;
-
 /**
- * Represents a container containing instances of FileInterface
+ * Represents a directory, which is a collection of files, file pointers, and
+ * other directories.
  *
  * @template TKey of array-key
- * @template T of FileInterface
+ * @template T of NodeInterface
  * @extends \Traversable<TKey,T>
  */
-interface FilesInterface extends
+interface DirectoryInterface extends
+    NodeInterface,
     \Traversable,
     \Countable
 {
